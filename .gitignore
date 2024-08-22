@@ -1,0 +1,23 @@
+
+# Swap the comments on the following lines if you don't wish to use zero-installs
+# Documentation here: https://yarnpkg.com/features/zero-installs
+!.yarn/cache
+#.pnp.*
+# Ignore the yarn v3 zip files
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+# ignore dependency caches
+node_modules
+node_modules_bak/
+node_modules_symlink_bak
+.yalc/
+yalc.lock
+
+# ignore playwright caches
+playwright/.cache/*
+playwright-report/*
+
