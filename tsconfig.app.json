@@ -1,0 +1,40 @@
+{
+	"extends": "./tsconfig.references-base.json",
+	"include": [
+		"./**/*.ts",
+		"./**/*.tsx"
+	],
+	"compilerOptions": {
+		"types": [],
+		"composite": true
+	},
+	"references": [
+		{
+			"path": "../../../../platform/packages/design-system/css-reset/afm-jira/tsconfig.json"
+		},
+		{
+			"path": "../../../../platform/packages/platform/feature-flags/afm-jira/tsconfig.json"
+		},
+		{
+			"path": "../../../../platform/packages/design-system/tooltip/afm-jira/tsconfig.json"
+		},
+		{
+			"path": "../../../../platform/packages/monorepo-tooling/gemini/afm-jira/tsconfig.json"
+		},
+		{
+			"path": "../ui/flag-app/tsconfig.app.json"
+		},
+		{
+			"path": "../intl/tsconfig.app.json"
+		},
+		{
+			"path": "../react-redux/tsconfig.app.json"
+		},
+		{
+			"path": "../controllers/tenant-context/tsconfig.app.json"
+		},
+		{
+			"path": "../../vendor-polyfills/tsconfig.app.json"
+		}
+	]
+}

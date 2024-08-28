@@ -2,15 +2,15 @@
   "name": "repro-memory-issue",
   "packageManager": "yarn@3.6.1",
   "scripts": {
-    "test": "node --require pprof-it ./node_modules/.bin/playwright test"
+    "test": "playwright test"
   },
   "dependencies": {
-    "@playwright/experimental-ct-core": "1.42.0",
-    "@playwright/experimental-ct-react": "1.42.0",
-    "@playwright/experimental-ct-react17": "1.42.0",
-    "@playwright/test": "1.42.0",
-    "playwright": "1.42.0",
-    "playwright-core": "1.42.0",
+    "@playwright/experimental-ct-core": "1.41.0",
+    "@playwright/experimental-ct-react": "1.41.0",
+    "@playwright/experimental-ct-react17": "1.41.0",
+    "@playwright/test": "1.41.0",
+    "playwright": "1.41.0",
+    "playwright-core": "1.41.0",
     "pprof": "^4.0.0"
   },
   "devDependencies": {

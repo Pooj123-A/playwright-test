@@ -1,0 +1,8 @@
+
+import { test, expect } from "@playwright/experimental-ct-react";
+import App1741 from "./App1741.tsx";
+
+test("should work", async ({ mount }) => {
+  const component = await mount(<App1741 />);
+  await expect(component).toContainText("Learn React");
+});

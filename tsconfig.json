@@ -1,20 +1,11 @@
 {
-  "compilerOptions": {
-    "target": "es6",                          
-    "module": "commonjs",                    
-    "jsx": "react",                           
-    "strict": true,                           
-    "esModuleInterop": true,                  
-    "skipLibCheck": true,                     
-    "forceConsistentCasingInFileNames": true, 
-    "resolveJsonModule": true,                
-    "isolatedModules": true                   
-  },
-  "include": [
-   "src/examples/**/*",                           
-   "src/integration-test/**/*"                          
-  ],
-  "exclude": [
-    "node_modules"                                  
-  ]
+	"extends": "./tsconfig.app.json",
+	"ts-node": {
+		"transpileOnly": true,
+		"files": true,
+		"compilerOptions": {
+			"module": "CommonJS",
+			"noErrorTruncation": true
+		}
+	}
 }

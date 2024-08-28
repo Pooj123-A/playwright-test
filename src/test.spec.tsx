@@ -3,5 +3,5 @@ import App from "./App.tsx";
 
 test("should work", async ({ mount }) => {
   const component = await mount(<App />);
-  await expect(component).toContainText("Learn React");
+  await expect(component).toContainText("Hello App");
 });
