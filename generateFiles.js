@@ -1,17 +1,12 @@
 const fs = require("fs");
 const path = require("path");
 
-const generateFiles = (totalFiles) => {
-  const exampleDir = path.join(__dirname, "example");
-  const integrationTestDir = path.join(__dirname, "integration-test");
+const generateModuleFiles = (totalModules) => {
+  const srcDir = path.join(__dirname, "src");
 
-  // Create directories if they don't exist
-  if (!fs.existsSync(exampleDir)) {
-    fs.mkdirSync(exampleDir);
-  }
-
-  if (!fs.existsSync(integrationTestDir)) {
-    fs.mkdirSync(integrationTestDir);
+  // Create the src directory if it doesn't exist
+  if (!fs.existsSync(srcDir)) {
+    fs.mkdirSync(srcDir);
   }
 
   const appTemplate = (num) => `
@@ -26,7 +21,7 @@ test("should work", async ({ mount }) => {
 
   const testSpecTemplate = (num) => `
 import { test, expect } from "@playwright/experimental-ct-react";
-import App${num} from "../example/App${num}.tsx";
+import App${num} from "./App${num}.tsx";
 
 test("should work", async ({ mount }) => {
   const component = await mount(<App${num} />);
@@ -34,17 +29,25 @@ test("should work", async ({ mount }) => {
 });
 `;
 
-  for (let i = 1; i <= totalFiles; i++) {
-    const appFilePath = path.join(exampleDir, `App${i}.tsx`);
-    const testSpecFilePath = path.join(integrationTestDir, `test${i}.spec.tsx`);
+  for (let i = 1; i <= totalModules; i++) {
+    const moduleDir = path.join(srcDir, `module${i}`);
 
+    // Create module directory
+    if (!fs.existsSync(moduleDir)) {
+      fs.mkdirSync(moduleDir);
+    }
+
+    const appFilePath = path.join(moduleDir, `App${i}.tsx`);
+    const testSpecFilePath = path.join(moduleDir, `test${i}.spec.ts`);
+
+    // Write the App and test spec files
     fs.writeFileSync(appFilePath, appTemplate(i), "utf8");
     fs.writeFileSync(testSpecFilePath, testSpecTemplate(i), "utf8");
   }
 
   console.log(
-    `${totalFiles} files created in 'example' and 'integration-test' directories.`
+    `${totalModules} module directories created in 'src/', each with App.tsx and test.spec.ts files.`
   );
 };
 
-generateFiles(3000);
+generateModuleFiles(3000);

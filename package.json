@@ -2,7 +2,7 @@
   "name": "repro-memory-issue",
   "packageManager": "yarn@3.6.1",
   "scripts": {
-    "test": "node --require pprof-it ./node_modules/.bin/playwright test"
+     "test": "node --require pprof-it ./node_modules/.bin/playwright test"
   },
   "dependencies": {
     "@playwright/experimental-ct-core": "1.42.0",

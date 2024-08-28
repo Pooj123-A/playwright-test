@@ -21,3 +21,5 @@ yalc.lock
 playwright/.cache/*
 playwright-report/*
 
+# ignore pprof generated files
+pprof/*
